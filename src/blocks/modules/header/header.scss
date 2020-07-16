@@ -1,81 +1,81 @@
 .header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  padding-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 32px;
 
-  @media(min-width: 1440px) {
-    flex-direction: column;
-    padding-top: 0;
-    width: 25%;
-  }
-
-  .logo {
     @media(min-width: 1440px) {
-      order: 3;
+        flex-direction: column;
+        width: 25%;
+        padding-top: 0;
     }
-  }
 
-  &__info {
-    margin-left: 35px;
-
-    @media(min-width: 1440px)  {
-      margin-left: 32px;
+    .logo {
+        @media(min-width: 1440px) {
+            order: 3;
+        }
     }
-  }
 
-  &__title {
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    // margin-bottom: -4px; // для строгого пиксель пёрфекта
-    font-size: 36px;
-    line-height: 42px;
+    &__info {
+        margin-left: 35px;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 4px;
-      right: -39px;
-      background-image: url("../../../img/svg/smile.svg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 30px;
-      height: 30px;
-
-      @media(min-width: 1440px) {
-        top: 6px;
-        right: -36px;
-      }
+        @media(min-width: 1440px) {
+            margin-left: 32px;
+        }
     }
-  }
 
-  &__text {
-    margin: 0;
-    font-size: 16px;
-    line-height: 18px;
-
-    span {
-      display: none;
-
-      @media(min-width: 1440px) {
+    &__title {
         display: inline-block;
-      }
-    }
-  }
+        position: relative;
+        margin: 0;
+        // margin-bottom: -4px; // для строгого пиксель пёрфекта
+        font-size: 36px;
+        line-height: 42px;
 
-  &__info--fact {
-    display: none;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 4px;
+            right: -39px;
+            width: 30px;
+            height: 30px;
+            background-image: url("../../../img/svg/smile.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
 
-    @media(min-width: 1440px) {
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 46px;
+            @media(min-width: 1440px) {
+                top: 6px;
+                right: -36px;
+            }
+        }
     }
 
-    .header__text {
-      text-align: right;
+    &__text {
+        margin: 0;
+        font-size: 16px;
+        line-height: 18px;
+
+        span {
+            display: none;
+
+            @media(min-width: 1440px) {
+                display: inline-block;
+            }
+        }
     }
-  }
+
+    &__info--fact {
+        display: none;
+
+        @media(min-width: 1440px) {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 46px;
+        }
+
+        .header__text {
+            text-align: right;
+        }
+    }
 }

@@ -113,22 +113,17 @@
     <script>
       const mySwiper = new Swiper(".swiper-container", {
         loop: true,
-        effect: "fade",
-        speed: 1500,
+        effect: "slide",
+        speed: 2000,
         autoHeight: false,
         roundLengths: true,
-        simulateTouch: false,
+        simulateTouch: true,
         watchOverflow: true,
         loop: true,
-        touchEventsTarget: "wrapper",
         slideActiveClass: "active",
-        // slides per view
+
         slidesPerView: 1,
         freeMode: false,
-
-        fadeEffect: {
-          crossFade: true
-        },
 
         autoplay: {
           delay: 2000

@@ -1,104 +1,152 @@
 .dialog-bubble {
-  position: relative;
-  margin-top: 15px;
-  padding: 16px 18px 14px;
-  background-color: $white;
-  box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.129917);
-  border-radius: 24px;
-  color: $dark-grey;
-  font-weight: $font-light;
-  z-index: 1;
-  // overflow: hidden;
-
-  @media (min-width: 1440px) {
-    margin-top: 5px;
-    padding: 33px 26px 20px;
-    width: 454px;
-    min-height: 246px;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 26px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 22px 22px 0 0;
-    border-color: #ffffff transparent transparent transparent;
+    position: relative;
+    z-index: 1;
+    padding: 16px 18px 14px;
+    margin-top: 15px;
+    background-color: $white;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.129917);
+    border-radius: 24px;
+    color: $dark-grey;
+    font-weight: $font-light;
 
     @media (min-width: 1440px) {
-      transform: rotate(92deg);
-      left: calc(454px - 78px);
+        width: 454px;
+        height: 246px;
+        padding: 22px 26px 20px;
+        margin-top: 5px;
     }
-  }
 
-  &__slider {
-    overflow: visible;
-  }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 26px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 22px 22px 0 0;
+        border-color: #ffffff transparent transparent transparent;
 
-  &__title {
-    display: none;
-
-    @media (min-width: 1440px) {
-      display: block;
-      margin-bottom: 22px;
-      font-size: 20px;
-      line-height: 26px;
-      color: #a84fd4;
+        @media (min-width: 1440px) {
+            left: calc(454px - 78px);
+            transform: rotate(92deg);
+        }
     }
-  }
 
-  &__icon-wrap {
-    display: none;
+    &__slider {
+        overflow: hidden;
+        background-color: $white;
 
-    @media (min-width: 1440px) {
-      display: block;
-      position: relative;
+        @media (min-width: 1440px) {
+            width: 415px;
+            height: 160px;
+            padding-top: 12px;
+        }
     }
-  }
 
-  &__icon {
-    position: absolute;
-    top: -60px;
-    right: -10px;
-    width: 76px;
-    height: 76px;
-    border-radius: 50%;
-  }
+    &__title {
+        display: none;
 
-  &__country {
-    margin-right: 8px;
-  }
-
-  &__info-block {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-
-    @media (min-width: 1440px) {
-      margin-bottom: 20px;
+        @media (min-width: 1440px) {
+            display: block;
+            margin-bottom: 22px;
+            font-size: 20px;
+            line-height: 26px;
+            color: #a84fd4;
+        }
     }
-  }
 
-  &__country-img {
-    display: block;
-    border-radius: 50%;
-    width: 21px;
-    height: 21px;
-  }
+    &__icon-wrap {
+        display: none;
 
-  &__name {
-    font-size: 16px;
-    line-height: 19px;
-    color: $blue;
-  }
+        @media (min-width: 1440px) {
+            display: block;
+            position: relative;
+        }
+    }
 
-  &__text {
-    margin: 0;
-    margin-top: 12px;
-    letter-spacing: -0.5px;
-  }
+    &__icon {
+        position: absolute;
+        top: -60px;
+        right: 3px;
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+    }
+
+    &__country {
+        margin-right: 8px;
+    }
+
+    &__info-block {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-end;
+
+        @media (min-width: 1440px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__country-img {
+        display: block;
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+    }
+
+    &__name {
+        font-size: 16px;
+        line-height: 19px;
+        color: $blue;
+    }
+
+    &__text {
+        margin: 0;
+        margin-top: 12px;
+        letter-spacing: -0.5px;
+    }
+}
+
+// .swiper-slide {
+//   width: 454px !important;
+// }
+
+.dialog-bubble__slider .swiper-slide.active {
+    animation-name: hasBlured;
+    animation: hasBlured 1.3s linear;
+}
+
+@keyframes hasBlured {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+        filter: blur(20px);
+    }
+    10% {
+        opacity: 0.6;
+        transform: translateX(-15%);
+        filter: blur(20px);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(-15%);
+        filter: blur(0);
+    }
+}
+
+@keyframes e {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    25% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
